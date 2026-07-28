@@ -21,12 +21,34 @@ public class Main {
                    double ratio = sc.nextDouble();
                   if(ratio <=0){
                      System.out.println("Invalid Input");
-            }
+                    }
                   else{
                       double db = 10*Math.log10(ratio);
                       System.out.println("Result = %.2f db\n",db);
+                      }
+            break;
+            case 2;
+            System.out.println("Enter dB");
+            double dB = sc.nextDouble();
+            double powerRatio = Math.pow(10, dB / 10);
+            System.out.println("Result = %.4f\n",powerRatio);
+            break;
+            case 3;
+            System.out.println("Enter Power in mW:");
+            double mW = sc.nextDouble();
+            if(mW <= 0){
+                System.out.println("Invalid Input");
+            }
+            else{
+                double dbm = 10*Math.log10(mW);
+                System.out.println("Result = %.2fdBm\n",dbm);
             }
             break;
+            case 4;
+            
+
+
+
 
         }
 
