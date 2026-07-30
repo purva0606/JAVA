@@ -135,6 +135,13 @@ public class Main {
                     }
 
                     break;
+                    case 0;
+                    System.out.println("Thank you!");
+                    return;
+                     default:
+                        System.out.println("invalid choice");
+            }
+
 
 
         }
