@@ -1,0 +1,152 @@
+import java.util.*;
+public class Main {
+    static Scanner sc = new Scanner(System.in);
+    static final double SPEED_OF_LIGHT = 299792458.0;
+    public static void main(String[] args){
+        while(true){
+            System.out.println("UNIT CONVERTER");
+            System.out.println("1. POWER RATIO TO dB");
+            System.out.println("2. dB TO POWER RATIO");
+            System.out.println("3. POWER (mW) TO dBm");
+            System.out.println("4. FREQUENCY TO WAVELENGTH");
+            System.out.println("5. WAVELENGTH TO FREQUENCY");
+            System.out.println("6. RESISTER COLOR CODE");
+            System.out.println("0. EXIST");
+            System.out.println("Enter your Choice:");
+            int choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice){
+                case 1;
+                 System.out.println("Enter Power ratio");
+                   double ratio = sc.nextDouble();
+                  if(ratio <=0){
+                     System.out.println("Invalid Input");
+                    }
+                  else{
+                      double db = 10*Math.log10(ratio);
+                      System.out.println("Result = %.2f db\n",db);
+                      }
+            break;
+            case 2;
+            System.out.println("Enter dB");
+            double dB = sc.nextDouble();
+            double powerRatio = Math.pow(10, dB / 10);
+            System.out.println("Result = %.4f\n",powerRatio);
+            break;
+            case 3;
+            System.out.println("Enter Power in mW:");
+            double mW = sc.nextDouble();
+            if(mW <= 0){
+                System.out.println("Invalid Input");
+            }
+            else{
+                double dbm = 10*Math.log10(mW);
+                System.out.println("Result = %.2fdBm\n",dbm);
+            }
+            break;
+            case 4;
+            System.out.println("Enter Frequency (hz):");
+            double frequency = sc.nextDouble();
+            if (frequency <=0){
+                System.out.println("Invalid Input");
+            }
+            else{
+                doublewavelength = SPEED_OF_LIGHT/frequency;
+                System.out.println("Wavelength = %.6fm\n", wavelength);
+            }
+            break;
+            case 5;
+            System.out.println("Enter Wavelength(m):");
+            double wavelength = sc.nextDouble();
+            if (wavelength <=0){
+                System.out.println("Invalid Input");
+            }
+            else{
+                doublefrequency = SPEED_OF_LIGHT/wavelength;
+                System.out.println("Frequency = %.3eHz\n", frequencyResult);
+            }
+            break;
+            case 6;
+            HashMap<String, Integer> digit = new HashMap<>();
+                    digit.put("black", 0);
+                    digit.put("brown", 1);
+                    digit.put("red", 2);
+                    digit.put("orange", 3);
+                    digit.put("yellow", 4);
+                    digit.put("green", 5);
+                    digit.put("blue", 6);
+                    digit.put("violet", 7);
+                    digit.put("gray", 8);
+                    digit.put("white", 9);
+
+                    HashMap<String, Double> multiplier = new HashMap<>();
+                    multiplier.put("black", 1.0);
+                    multiplier.put("brown", 10.0);
+                    multiplier.put("red", 100.0);
+                    multiplier.put("orange", 1000.0);
+                    multiplier.put("yellow", 10000.0);
+                    multiplier.put("green", 100000.0);
+                    multiplier.put("blue", 1000000.0);
+                    multiplier.put("violet", 10000000.0);
+                    multiplier.put("gray", 100000000.0);
+                    multiplier.put("white", 1000000000.0);
+                    multiplier.put("gold", 0.1);
+                    multiplier.put("silver", 0.01);
+
+                    HashMap<String, String> tolerance = new HashMap<>();
+                    tolerance.put("brown", "±1%");
+                    tolerance.put("red", "±2%");
+                    tolerance.put("gold", "±5%");
+                    tolerance.put("silver", "±10%");
+                    tolerance.put("none", "±20%");
+
+                    System.out.print("Band 1 Color: ");
+                    String b1 = sc.next().toLowerCase();
+
+                    System.out.print("Band 2 Color: ");
+                    String b2 = sc.next().toLowerCase();
+
+                    System.out.print("Band 3 Color: ");
+                    String b3 = sc.next().toLowerCase();
+
+                    System.out.print("Band 4 Color: ");
+                    String b4 = sc.next().toLowerCase();
+
+                    if (!digit.containsKey(b1) || !digit.containsKey(b2)
+                            || !multiplier.containsKey(b3)
+                            || !tolerance.containsKey(b4)) {
+
+                        System.out.println("Invalid Color Entered");
+                        break;
+                    }
+
+                    int value = digit.get(b1) * 10 + digit.get(b2);
+                    double resistance = value * multiplier.get(b3);
+
+                    if (resistance >= 1000000) {
+                        System.out.printf("Resistance = %.2f MΩ %s\n",
+                                resistance / 1000000, tolerance.get(b4));
+                    } else if (resistance >= 1000) {
+                        System.out.printf("Resistance = %.2f kΩ %s\n",
+                                resistance / 1000, tolerance.get(b4));
+                    } else {
+                        System.out.printf("Resistance = %.2f Ω %s\n",
+                                resistance, tolerance.get(b4));
+                    }
+
+                    break;
+                    case 0;
+                    System.out.println("Thank you!");
+                    return;
+                     default:
+                        System.out.println("invalid choice");
+            }
+
+
+
+        }
+
+
+    }
+
+}
