@@ -32,7 +32,39 @@ public class PalindromePrimeToolKit{
            System.out.println("3. Exit");
            System.out.println("Enter Your Choices");
            choice = sc.nextInt();
- 
+           switch (choice) {
+
+                case 1:
+                    System.out.print("Enter a number: ");
+                    int p = sc.nextInt();
+
+                    if (isPalindrome(p))
+                        System.out.println(p + " is a Palindrome.");
+                    else
+                        System.out.println(p + " is NOT a Palindrome.");
+                    break;
+
+                case 2:
+                    System.out.print("Enter a number: ");
+                    int n = sc.nextInt();
+
+                    if (isPrime(n))
+                        System.out.println(n + " is a Prime Number.");
+                    else
+                        System.out.println(n + " is NOT a Prime Number.");
+                    break;
+
+                case 3:
+                    System.out.println("Thank you!");
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice!");
+
+            }
         }
+         while (choice != 3);
+
+        sc.close();
     }
 }
