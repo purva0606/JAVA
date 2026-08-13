@@ -42,7 +42,7 @@ public class PalindromePrimeToolKit{
                         System.out.println(p + " is a Palindrome.");
                     else
                         System.out.println(p + " is NOT a Palindrome.");
-                    break;
+                     break;
 
                 case 2:
                     System.out.print("Enter a number: ");
