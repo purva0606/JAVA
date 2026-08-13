@@ -23,5 +23,10 @@ class Students {
             return "D";
         else return "F";
     }
-    
+    public String toString(){
+        return "Roll No:"+ rollNo +
+        " Name:"+ name +
+        " Marks:"+ marks +
+        "Grade:"+ getGrade();
+    }
 }
