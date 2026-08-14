@@ -30,3 +30,19 @@ class Students {
         "Grade:"+ getGrade();
     }
 }
+public class StudentResultManagementSystem{
+    static ArrayList<Student> students = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
+    static void addStudent(){
+        try{
+            System.out.print("Enter Roll no");
+            int rollNo = sc.nextInt();
+            sc.nextLine();
+            for (Student s : students)
+            {
+                if(s.rollNo == rollNo){
+                    System.out.println("Roll no. already exists");
+                    return;
+        }
+    }
+}
