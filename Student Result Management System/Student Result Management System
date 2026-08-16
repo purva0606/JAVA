@@ -65,4 +65,16 @@ public class StudentResultManagementSystem{
             sc.nextLine();
         }
     }
+    static void viewStudents() {
+
+        if (students.isEmpty()) {
+            System.out.println("No student records found.");
+            return;
+        }
+
+        System.out.println(" Student Records");
+           for (Student s : students) {
+            System.out.println(s);
+        }
+    }
 }
