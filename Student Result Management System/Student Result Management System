@@ -77,4 +77,20 @@ public class StudentResultManagementSystem{
             System.out.println(s);
         }
     }
+    static void searchStudent() {
+
+        System.out.print("Enter Roll Number to search: ");
+        int rollNo = sc.nextInt();
+
+        for (Student s : students) {
+            if (s.rollNo == rollNo) {
+                System.out.println("Student Found:");
+                System.out.println(s);
+                return;
+            }
+        }
+
+        System.out.println("Student not found.");
+    }
+
 }
