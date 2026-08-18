@@ -92,5 +92,37 @@ public class StudentResultManagementSystem{
 
         System.out.println("Student not found.");
     }
+    //update student
+    static void updateStudent() {
+
+        System.out.print("Enter Roll Number to update: ");
+        int rollNo = sc.nextInt();
+        sc.nextLine();
+
+        for (Student s : students) {
+
+            if (s.rollNo == rollNo) {
+
+                System.out.print("Enter New Name: ");
+                s.name = sc.nextLine();
+
+                System.out.print("Enter New Marks: ");
+                double marks = sc.nextDouble();
+
+                if (marks < 0 || marks > 100) {
+                    System.out.println("Invalid marks.");
+                    return;
+                }
+
+                s.marks = marks;
+
+                System.out.println("Student updated successfully!");
+                return;
+            }
+        }
+
+        System.out.println("Student not found.");
+    }
+
 
 }
