@@ -123,6 +123,24 @@ public class StudentResultManagementSystem{
 
         System.out.println("Student not found.");
     }
+     // Delete student
+    static void deleteStudent() {
+
+        System.out.print("Enter Roll Number to delete: ");
+        int rollNo = sc.nextInt();
+
+        for (Student s : students) {
+
+            if (s.rollNo == rollNo) {
+                students.remove(s);
+                System.out.println("Student deleted successfully!");
+                return;
+            }
+        }
+
+        System.out.println("Student not found.");
+    }
+
 
 
 }
