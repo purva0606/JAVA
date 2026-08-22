@@ -140,6 +140,24 @@ public class StudentResultManagementSystem{
 
         System.out.println("Student not found.");
     }
+// Calculate class average
+    static void calculateAverage() {
+
+        if (students.isEmpty()) {
+            System.out.println("No students available.");
+            return;
+        }
+
+        double total = 0;
+
+        for (Student s : students) {
+            total += s.marks;
+        }
+
+        double average = total / students.size();
+
+        System.out.println("Class Average: " + average);
+    }
 
 
 
