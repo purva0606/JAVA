@@ -158,6 +158,28 @@ public class StudentResultManagementSystem{
 
         System.out.println("Class Average: " + average);
     }
+    // Save students to file
+    static void saveToFile() {
+
+        try {
+            FileWriter writer = new FileWriter("students.txt");
+
+            for (Student s : students) {
+                writer.write(s.rollNo + "," +
+                             s.name + "," +
+                             s.marks + "," +
+                             s.getGrade() + "\n");
+            }
+
+            writer.close();
+
+            System.out.println("Data saved to students.txt");
+
+        } catch (IOException e) {
+            System.out.println("Error while saving data.");
+        }
+    }
+
 
 
 
