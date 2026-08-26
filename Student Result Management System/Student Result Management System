@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-class Students {
+class Student {
     int rollNo;
     String name;
     double marks;
