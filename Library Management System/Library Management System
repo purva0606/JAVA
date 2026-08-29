@@ -33,5 +33,20 @@ class Member {
         this.id = id;
         this.name = name;
     }
+ public String toString() {
+        return "Member ID: " + id + " | Name: " + name;
+    }
+}
+
+public class LibraryManagementSystem {
+
+    static Scanner sc = new Scanner(System.in);
+
+    // HashMap for books and members
+    static HashMap<Integer, Book> books = new HashMap<>();
+    static HashMap<Integer, Member> members = new HashMap<>();
+
+    // Stores due dates
+    static HashMap<Integer, LocalDate> dueDates = new HashMap<>();
 
 
