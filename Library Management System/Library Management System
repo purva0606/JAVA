@@ -48,5 +48,27 @@ public class LibraryManagementSystem {
 
     // Stores due dates
     static HashMap<Integer, LocalDate> dueDates = new HashMap<>();
+// Add book
+    static void addBook() {
+
+        System.out.print("Enter Book ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        if (books.containsKey(id)) {
+            System.out.println("Book ID already exists!");
+            return;
+        }
+
+        System.out.print("Enter Book Title: ");
+        String title = sc.nextLine();
+
+        System.out.print("Enter Author Name: ");
+        String author = sc.nextLine();
+
+        books.put(id, new Book(id, title, author));
+
+        System.out.println("Book added successfully!");
+    }
 
 
