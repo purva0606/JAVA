@@ -70,5 +70,24 @@ public class LibraryManagementSystem {
 
         System.out.println("Book added successfully!");
     }
+// View books
+    static void viewBooks() {
+
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+            return;
+        }
+
+        System.out.println("\n----- BOOK LIST -----");
+
+        // Collections
+        ArrayList<Book> list = new ArrayList<>(books.values());
+
+        Collections.sort(list, Comparator.comparingInt(b -> b.id));
+
+        for (Book book : list) {
+            System.out.println(book);
+        }
+    }
 
 
