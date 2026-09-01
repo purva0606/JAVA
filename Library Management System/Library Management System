@@ -89,5 +89,39 @@ public class LibraryManagementSystem {
             System.out.println(book);
         }
     }
+// Add member
+    static void addMember() {
+
+        System.out.print("Enter Member ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        if (members.containsKey(id)) {
+            System.out.println("Member ID already exists!");
+            return;
+        }
+
+        System.out.print("Enter Member Name: ");
+        String name = sc.nextLine();
+
+        members.put(id, new Member(id, name));
+
+        System.out.println("Member added successfully!");
+    }
+
+    // View members
+    static void viewMembers() {
+
+        if (members.isEmpty()) {
+            System.out.println("No members found.");
+            return;
+        }
+
+        System.out.println("\n----- MEMBER LIST -----");
+
+        for (Member member : members.values()) {
+            System.out.println(member);
+        }
+    }
 
 
