@@ -109,19 +109,6 @@ public class LibraryManagementSystem {
         System.out.println("Member added successfully!");
     }
 
-    // View members
-    static void viewMembers() {
-
-        if (members.isEmpty()) {
-            System.out.println("No members found.");
-            return;
-        }
-
-        System.out.println("\n----- MEMBER LIST -----");
-
-        for (Member member : members.values()) {
-            System.out.println(member);
-        }
-    }
+    
 
 
