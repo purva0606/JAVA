@@ -122,3 +122,39 @@ public class LibraryManagementSystem {
             System.out.println(member);
         }
     }
+// Issue book
+    static void issueBook() {
+
+        System.out.print("Enter Book ID: ");
+        int bookId = sc.nextInt();
+
+        System.out.print("Enter Member ID: ");
+        int memberId = sc.nextInt();
+
+        if (!books.containsKey(bookId)) {
+            System.out.println("Book not found.");
+            return;
+        }
+
+        if (!members.containsKey(memberId)) {
+            System.out.println("Member not found.");
+            return;
+        }
+
+        Book book = books.get(bookId);
+
+        if (book.issued) {
+            System.out.println("Book is already issued.");
+            return;
+        }
+
+        book.issued = true;
+
+        // Due date = 14 days from today
+        LocalDate dueDate = LocalDate.now().plusDays(14);
+
+        dueDates.put(bookId, dueDate);
+
+        System.out.println("Book issued successfully!");
+        System.out.println("Due Date: " + dueDate);
+    }
