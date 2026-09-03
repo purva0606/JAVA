@@ -158,3 +158,35 @@ public class LibraryManagementSystem {
         System.out.println("Book issued successfully!");
         System.out.println("Due Date: " + dueDate);
     }
+// Return book
+    static void returnBook() {
+
+        System.out.print("Enter Book ID: ");
+        int bookId = sc.nextInt();
+
+        if (!books.containsKey(bookId)) {
+            System.out.println("Book not found.");
+            return;
+        }
+
+        Book book = books.get(bookId);
+
+        if (!book.issued) {
+            System.out.println("This book is not issued.");
+            return;
+        }
+
+        LocalDate dueDate = dueDates.get(bookId);
+        LocalDate today = LocalDate.now();
+
+        book.issued = false;
+        dueDates.remove(bookId);
+
+        System.out.println("Book returned successfully!");
+
+        if (today.isAfter(dueDate)) {
+            System.out.println("Book was returned late.");
+        } else {
+            System.out.println("Book returned on time.");
+        }
+    }
