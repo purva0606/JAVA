@@ -190,3 +190,26 @@ public class LibraryManagementSystem {
             System.out.println("Book returned on time.");
         }
     }
+    // Show issued books
+    static void showIssuedBooks() {
+
+        boolean found = false;
+
+        System.out.println("\n----- ISSUED BOOKS -----");
+
+        for (Book book : books.values()) {
+
+            if (book.issued) {
+
+                found = true;
+
+                System.out.println(book);
+                System.out.println("Due Date: " + dueDates.get(book.id));
+            }
+        }
+
+        if (!found) {
+            System.out.println("No books are currently issued.");
+        }
+    }
+
