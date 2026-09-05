@@ -212,4 +212,71 @@ public class LibraryManagementSystem {
             System.out.println("No books are currently issued.");
         }
     }
+// Main menu
+    public static void main(String[] args) {
 
+        while (true) {
+            System.out.println("   LIBRARY MANAGEMENT SYSTEM");
+            System.out.println("1. Add Book");
+            System.out.println("2. View Books");
+            System.out.println("3. Add Member");
+            System.out.println("4. View Members");
+            System.out.println("5. Issue Book");
+            System.out.println("6. Return Book");
+            System.out.println("7. Show Issued Books");
+            System.out.println("8. Exit");
+
+            System.out.print("Enter your choice: ");
+
+            try {
+
+                int choice = sc.nextInt();
+
+                switch (choice) {
+
+                    case 1:
+                        addBook();
+                        break;
+
+                    case 2:
+                        viewBooks();
+                        break;
+
+                    case 3:
+                        addMember();
+                        break;
+
+                    case 4:
+                        viewMembers();
+                        break;
+
+                    case 5:
+                        issueBook();
+                        break;
+
+                    case 6:
+                        returnBook();
+                        break;
+
+                    case 7:
+                        showIssuedBooks();
+                        break;
+
+                    case 8:
+                        System.out.println("Thank you for using Library Management System!");
+                        sc.close();
+                        return;
+
+                    default:
+                        System.out.println("Invalid choice!");
+
+                }
+
+            } catch (InputMismatchException e) {
+
+                System.out.println("Please enter a valid number.");
+                sc.nextLine();
+            }
+        }
+    }
+}
